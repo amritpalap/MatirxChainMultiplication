@@ -1,0 +1,11 @@
+F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\bin\Debug\netcoreapp2.2\MatirxChainMultiplication.deps.json
+F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\bin\Debug\netcoreapp2.2\MatirxChainMultiplication.runtimeconfig.json
+F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\bin\Debug\netcoreapp2.2\MatirxChainMultiplication.runtimeconfig.dev.json
+F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\bin\Debug\netcoreapp2.2\MatirxChainMultiplication.dll
+F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\bin\Debug\netcoreapp2.2\MatirxChainMultiplication.pdb
+F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\obj\Debug\netcoreapp2.2\MatirxChainMultiplication.csproj.CoreCompileInputs.cache
+F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\obj\Debug\netcoreapp2.2\MatirxChainMultiplication.AssemblyInfoInputs.cache
+F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\obj\Debug\netcoreapp2.2\MatirxChainMultiplication.AssemblyInfo.cs
+F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\obj\Debug\netcoreapp2.2\MatirxChainMultiplication.dll
+F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\obj\Debug\netcoreapp2.2\MatirxChainMultiplication.pdb
+F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\obj\Debug\netcoreapp2.2\MatirxChainMultiplication.csprojAssemblyReference.cache

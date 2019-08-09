@@ -1,0 +1,81 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		int TotalMatrixCount = 6;
+		
+		/*
+		 * intializing the empty  m array 5*5 to store the minMutliCostValue
+         */
+		int[, ] memoryTable = new int[TotalMatrixCount, TotalMatrixCount];
+		
+		/*
+		 * intializing the empty  kValue array 5*5 to store the k which we get the least minMultiCostValue
+		 */
+		int[, ] kValue = new int[TotalMatrixCount, TotalMatrixCount];
+		
+		/*
+		 * storing  the poop
+		 */
+		int[] candMtxDim = new int[6]{4, 10, 3, 12, 20, 7};
+		
+		int i, j, k, m, computedK, smallestK;
+		
+		for (i = 1; i < TotalMatrixCount; i++) {
+			for (j = i; j < TotalMatrixCount; j++) {
+				if(i == j) {
+					memoryTable[i, j] = 0;
+				}
+				else {
+					memoryTable[i, j] = int.MaxValue;
+				}
+			}
+		}
+		
+		for (m = 1; m < TotalMatrixCount; m++) {
+			for (i = 1; i < (TotalMatrixCount - m); i++) {
+				j = i + m;
+				Console.Write(i + ", " + j);
+				
+				smallestK = int.MaxValue;
+				for (k = i; k < j; k++)
+				{
+					computedK = memoryTable[i, k] + memoryTable[(k + 1), j] + (candMtxDim[(i-1)] * candMtxDim[k] * candMtxDim[j]);
+					if (computedK < smallestK)
+					{
+						smallestK = computedK;
+						kValue[i, j] = k;
+					}
+				}
+				memoryTable[i, j] = smallestK;
+				Console.WriteLine(", " + smallestK);
+			}
+		}
+
+		//Display the both Array value
+		Console.WriteLine("Multiple Cost Value Chain \n");
+		for (i = 1; i < TotalMatrixCount; i++) {
+			for (j = 1; j < TotalMatrixCount; j++) {
+				Console.Write(memoryTable[i, j]);
+				if((j + 1) != TotalMatrixCount) {
+					Console.Write(" | ");
+				}
+			}
+			Console.Write("\n");
+		}
+
+		//Display the both Array value
+		Console.WriteLine("\nk values");
+		for (i = 1; i < TotalMatrixCount; i++) {
+			for (j = 1; j < TotalMatrixCount; j++) {
+				Console.Write(" | " + kValue[i, j]);
+				if((j + 1) != TotalMatrixCount) {
+					Console.Write(" | ");
+				}
+			}
+			Console.Write("\n");
+		}
+	}
+}
