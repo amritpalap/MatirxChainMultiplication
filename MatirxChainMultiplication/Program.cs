@@ -6,21 +6,46 @@ namespace MatirxChainMultiplication
     {
         static void Main(string[] args)
         {
-            int numberOfMatrix = 6;
             /*
-             * intializing the empty  m array 5*5 to store the minMutliCostValue
+             * provide the nunmber fo matrixes. 
+             *  
+             */
+            int numberOfMatrix;
+            /*
+             * intializing the variables
+             */
+            int diagnalLoopValue, i, k, j, computedValue, minValue;
+
+            Console.WriteLine("Please enter the total number of matrixes:");
+            //will trun this into funtion
+
+
+            // reason we add 1 in the user input:- to make calculation of matrixMultiCostTable easier, you will see in the next lines :)
+            numberOfMatrix += 1;
+            /*
+             * intializing the empty  m array unerInput*unerInput to store the minMutliCostValue
              */
             int[,] matrixMultiCostTabe = new int[numberOfMatrix, numberOfMatrix];
-            
+
             /*
-             * intializing the empty  kValue array 5*5 to store the k which we get the least minMultiCostValue
+             * intializing the empty  kValue array unerInput*unerInput to store the k which we get the least minMultiCostValue
              */
             int[,] kValue =new int[numberOfMatrix, numberOfMatrix];
-           
+            /*
+             * get the dimensions for the each matrix
+             */
+
+            //for ( i = 0; i <(numberOfMatrix *2) ; i++)
+            //{
+
+            //}
             int[] p = new int[6] {4, 10, 3, 12, 20, 7 };
+            /*
+             * keep the count for every loop
+             */
             int timesLoopWork = 0;
             
-            int diagnalLoopValue, i, k, j,computedValue,minValue;
+            
 
             for (i = 1; i < numberOfMatrix; i++)
             {
@@ -89,6 +114,22 @@ namespace MatirxChainMultiplication
 
 
 
+        }
+        public static string GetNumberOfMatrixes()
+        {
+            Console.WriteLine("Please enter the total number of matrixes:");
+            string userInput = Console.ReadLine();
+            return userInput;
+        }
+       public static bool IsUserInputInt(int numberOfMatrix)
+        {
+            bool result = false;
+            if (int.TryParse(Console.ReadLine(), out numberOfMatrix))
+            {
+                result = true;
+            }
+
+            return result;
         }
     }
 }
