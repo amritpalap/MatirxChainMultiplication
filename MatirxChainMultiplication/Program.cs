@@ -10,27 +10,61 @@ namespace MatirxChainMultiplication
              * provide the nunmber fo matrixes. 
              *  
              */
-            int numberOfMatrix;
+            int numberOfMatrix = 0;
             /*
              * intializing the variables
              */
             int diagnalLoopValue, i, k, j, computedValue, minValue;
 
-            Console.WriteLine("Please enter the total number of matrixes:");
-            //will trun this into funtion
 
+            //will turn this into funtion
+
+
+            //prompt user for the number for matrixes
+            string userInput = GetUserInput("Please enter the total number of matrixes:");
+
+            //Check if the user input type is integer
+            //keep prompting until the value matches requirements
+            while (true)
+            {
+                string message="";
+                if (IsTypeInt(userInput))
+                {
+                    message = "Please enter an Value that is integer and more than one :)";
+                    if (int.Parse(userInput) > 1)
+                    {
+                        numberOfMatrix = int.Parse(userInput);
+                        break;
+                    }
+                    else
+                    {
+                        message = "please enter the value more than 1";
+                    }
+                    
+                }
+                else
+                {
+                    GetUserInput(message);
+                }
+            }
 
             // reason we add 1 in the user input:- to make calculation of matrixMultiCostTable easier, you will see in the next lines :)
+            // add one in the user value to  start the loop from 1  whcich result in overcoming the  error of (p[(i - 1)] * p[k] * p[j]), so when we comopute the value it will start from the index 1.
             numberOfMatrix += 1;
+
+
             /*
              * intializing the empty  m array unerInput*unerInput to store the minMutliCostValue
              */
             int[,] matrixMultiCostTabe = new int[numberOfMatrix, numberOfMatrix];
 
+
             /*
              * intializing the empty  kValue array unerInput*unerInput to store the k which we get the least minMultiCostValue
              */
-            int[,] kValue =new int[numberOfMatrix, numberOfMatrix];
+            int[,] kValue = new int[numberOfMatrix, numberOfMatrix];
+
+
             /*
              * get the dimensions for the each matrix
              */
@@ -39,13 +73,13 @@ namespace MatirxChainMultiplication
             //{
 
             //}
-            int[] p = new int[6] {4, 10, 3, 12, 20, 7 };
+            int[] p = new int[6] { 4, 10, 3, 12, 20, 7 };
             /*
              * keep the count for every loop
              */
             int timesLoopWork = 0;
-            
-            
+
+
 
             for (i = 1; i < numberOfMatrix; i++)
             {
@@ -62,39 +96,39 @@ namespace MatirxChainMultiplication
                 }
             }
 
-            for ( diagnalLoopValue = 1; diagnalLoopValue < numberOfMatrix; diagnalLoopValue++)
+            for (diagnalLoopValue = 1; diagnalLoopValue < numberOfMatrix; diagnalLoopValue++)
             {
                 timesLoopWork++;
-                for ( i = 1; i< (numberOfMatrix - diagnalLoopValue); i++)
+                for (i = 1; i < (numberOfMatrix - diagnalLoopValue); i++)
                 {
                     timesLoopWork++;
                     j = i + diagnalLoopValue;
                     Console.Write(i + ", " + j);
                     minValue = int.MaxValue;
 
-                    for ( k = i; k < j ; k++)
+                    for (k = i; k < j; k++)
                     {
-                        
+
                         computedValue = matrixMultiCostTabe[i, k] + matrixMultiCostTabe[(k + 1), j] + (p[(i - 1)] * p[k] * p[j]);
 
-                            if (  computedValue< minValue)
-                                {
-                               minValue= computedValue;
+                        if (computedValue < minValue)
+                        {
+                            minValue = computedValue;
                             kValue[i, j] = k;
                         }
-                       
+
                     }
                     matrixMultiCostTabe[i, j] = minValue;
                     Console.WriteLine(", " + matrixMultiCostTabe[i, j]);
-                }    
+                }
 
             }
-            Console.Write("Times Loop work:- "+timesLoopWork);
+            Console.Write("Times Loop work:- " + timesLoopWork);
             //Display the both Array value
             Console.Write("Multiple Cost Value Chain \n");
-            for ( i = 1; i < numberOfMatrix; i++)
+            for (i = 1; i < numberOfMatrix; i++)
             {
-                for ( j = 1; j < numberOfMatrix; j++)
+                for (j = 1; j < numberOfMatrix; j++)
                 {
                     Console.Write(" | " + matrixMultiCostTabe[i, j] + " | ");
                 }
@@ -103,9 +137,9 @@ namespace MatirxChainMultiplication
 
             //Display the both Array value
             Console.Write("Multiple Cost Value Chain \n");
-            for ( i = 1; i < numberOfMatrix; i++)
+            for (i = 1; i < numberOfMatrix; i++)
             {
-                for ( j = 1; j < numberOfMatrix; j++)
+                for (j = 1; j < numberOfMatrix; j++)
                 {
                     Console.Write(" | " + kValue[i, j] + " | ");
                 }
@@ -115,16 +149,18 @@ namespace MatirxChainMultiplication
 
 
         }
-        public static string GetNumberOfMatrixes()
+        public static String GetUserInput(string message)
         {
-            Console.WriteLine("Please enter the total number of matrixes:");
+            Console.WriteLine(message);
             string userInput = Console.ReadLine();
+
             return userInput;
         }
-       public static bool IsUserInputInt(int numberOfMatrix)
+        public static bool IsTypeInt(object numberOfMatrix)
         {
             bool result = false;
-            if (int.TryParse(Console.ReadLine(), out numberOfMatrix))
+            int value;
+            if (int.TryParse(numberOfMatrix.ToString(), out value))
             {
                 result = true;
             }
