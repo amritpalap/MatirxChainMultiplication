@@ -8,3 +8,4 @@ F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\obj\Debug
 F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\obj\Debug\netcoreapp2.2\MatirxChainMultiplication.AssemblyInfo.cs
 F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\obj\Debug\netcoreapp2.2\MatirxChainMultiplication.dll
 F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\obj\Debug\netcoreapp2.2\MatirxChainMultiplication.pdb
+F:\visual Projects\MatirxChainMultiplication\MatirxChainMultiplication\obj\Debug\netcoreapp2.2\MatirxChainMultiplication.csprojAssemblyReference.cache
