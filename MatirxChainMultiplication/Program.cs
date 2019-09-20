@@ -27,7 +27,7 @@ namespace MatirxChainMultiplication
             //keep prompting until the value matches requirements
             while (true)
             {
-                string message="";
+                string message = "";
                 if (IsTypeInt(userInput))
                 {
                     message = "Please enter an Value that is integer and more than one :)";
@@ -40,7 +40,7 @@ namespace MatirxChainMultiplication
                     {
                         message = "please enter the value more than 1";
                     }
-                    
+
                 }
                 else
                 {
@@ -54,26 +54,34 @@ namespace MatirxChainMultiplication
 
 
             /*
-             * intializing the empty  m array unerInput*unerInput to store the minMutliCostValue
+             * intializing the empty  m array userInput*userInput to store the minMutliCostValue
              */
             int[,] matrixMultiCostTabe = new int[numberOfMatrix, numberOfMatrix];
 
 
             /*
-             * intializing the empty  kValue array unerInput*unerInput to store the k which we get the least minMultiCostValue
+             * intializing the empty  kValue array userInput*userInput to store the k which we get the least minMultiCostValue
              */
             int[,] kValue = new int[numberOfMatrix, numberOfMatrix];
 
 
             /*
              * get the dimensions for the each matrix
+             * Prompt the user to enter each matrix dimensions
+             * 
              */
+            int[] p = new int[numberOfMatrix];
 
-            //for ( i = 0; i <(numberOfMatrix *2) ; i++)
-            //{
+            for (i = 0; i < numberOfMatrix; i++)
+            {
+                userInput = GetUserInput("please enter the value of P" + i);
+                if (IsTypeInt(userInput))
+                {
+                    p[i] = int.Parse(userInput);
 
-            //}
-            int[] p = new int[6] { 4, 10, 3, 12, 20, 7 };
+                }
+                //still need to add a  else condition for p's value
+            }
             /*
              * keep the count for every loop
              */
@@ -149,6 +157,7 @@ namespace MatirxChainMultiplication
 
 
         }
+
         public static String GetUserInput(string message)
         {
             Console.WriteLine(message);
@@ -156,7 +165,7 @@ namespace MatirxChainMultiplication
 
             return userInput;
         }
-        public static bool IsTypeInt(object numberOfMatrix)
+        public static bool IsTypeInt(string numberOfMatrix)
         {
             bool result = false;
             int value;
