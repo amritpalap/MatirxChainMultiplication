@@ -25,27 +25,15 @@ namespace MatirxChainMultiplication
 
             //Check if the user input type is integer
             //keep prompting until the value matches requirements
+
             while (true)
             {
-                string message = "";
-                if (IsTypeInt(userInput))
+                if (IsTypeInt(userInput) && int.Parse(userInput) > 1)
                 {
-                    message = "Please enter an Value that is integer and more than one :)";
-                    if (int.Parse(userInput) > 1)
-                    {
-                        numberOfMatrix = int.Parse(userInput);
-                        break;
-                    }
-                    else
-                    {
-                        message = "please enter the value more than 1";
-                    }
-
+                    numberOfMatrix = int.Parse(userInput);
+                    break;
                 }
-                else
-                {
-                    GetUserInput(message);
-                }
+                userInput = GetUserInput("Please enter integer value");
             }
 
             // reason we add 1 in the user input:- to make calculation of matrixMultiCostTable easier, you will see in the next lines :)
