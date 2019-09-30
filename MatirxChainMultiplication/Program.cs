@@ -53,11 +53,11 @@ namespace MatirxChainMultiplication
              */
             int[] p;
 
-            //Select y for preDefault Values
+            //Select y for Default Values
             //Select n for custom Values
             string userInput = GetUserInput("Use Default Values! y / n ? ");
-
-            if (userInput.ToLower().Equals("y"))
+            // trim and convert userinput to lowercase 
+            if (userInput.ToLower().Trim().Equals("y") || userInput.ToLower().Trim().Equals("yes"))
             {
                 numberOfMatrix = 6;
                 p = new int[6] { 4, 10, 3, 12, 20, 7 };
