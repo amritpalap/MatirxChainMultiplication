@@ -1,9 +1,9 @@
 Small Program for Matirx Chain Multiplication Algoritihm.
 Takes the number of matrixes.
 Display: 
-1,Memroy table for possible lowest multiplications of               different matrixes paris.
-2,Lowest k value respecting to the same coordinate value    to      the memory table .
-3, Correct order of brackets.
+1. Memroy table for possible lowest multiplications of            different matrixes paris.
+2. Lowest k value respecting to the same coordinate value         to the memory table .
+3. Correct order of brackets.
 
 # Examples:
 ## 1,
